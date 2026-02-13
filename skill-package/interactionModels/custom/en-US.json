@@ -1,0 +1,103 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "personality changer",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "ChangePersonalityIntent",
+          "slots": [
+            {
+              "name": "personality",
+              "type": "PersonalityType"
+            }
+          ],
+          "samples": [
+            "change to {personality}",
+            "be {personality}",
+            "act {personality}",
+            "become {personality}",
+            "switch to {personality}",
+            "change personality to {personality}",
+            "I want you to be {personality}",
+            "can you be {personality}",
+            "make yourself {personality}"
+          ]
+        },
+        {
+          "name": "GetPersonalityIntent",
+          "slots": [],
+          "samples": [
+            "what's your personality",
+            "what personality are you",
+            "how are you feeling",
+            "what's your mood",
+            "what mood are you in"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "PersonalityType",
+          "values": [
+            {
+              "name": {
+                "value": "happy"
+              }
+            },
+            {
+              "name": {
+                "value": "sad"
+              }
+            },
+            {
+              "name": {
+                "value": "annoyed"
+              }
+            },
+            {
+              "name": {
+                "value": "mad"
+              }
+            },
+            {
+              "name": {
+                "value": "angry"
+              }
+            },
+            {
+              "name": {
+                "value": "upset"
+              }
+            },
+            {
+              "name": {
+                "value": "excited"
+              }
+            },
+            {
+              "name": {
+                "value": "neutral"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
