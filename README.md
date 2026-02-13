@@ -33,11 +33,9 @@ ideal-octo-succotash/
 ├── lambda/
 │   ├── index.js          # Main Lambda function with skill logic
 │   └── package.json      # Node.js dependencies
-├── skill-package/
-│   ├── skill.json        # Skill manifest
-│   └── interactionModels/
-│       └── custom/
-│           └── en-US.json  # Voice interaction model
+├── models/
+│   └── en-US.json        # Voice interaction model
+├── skill.json            # Skill manifest
 ├── LICENSE
 └── README.md
 ```
@@ -95,44 +93,59 @@ Each personality includes:
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v12.x or later)
-- [AWS Account](https://aws.amazon.com/)
-- [Amazon Developer Account](https://developer.amazon.com/)
-- [ASK CLI](https://developer.amazon.com/docs/smapi/quick-start-alexa-skills-kit-command-line-interface.html) (Alexa Skills Kit Command Line Interface)
+- [Amazon Developer Account](https://developer.amazon.com/) (required)
+- [AWS Account](https://aws.amazon.com/) (for custom hosting, not required for Alexa-hosted)
 
-### Setup Steps
+### Deployment Options
 
-1. **Clone the repository:**
+#### Option 1: Import from GitHub (Recommended - Easiest)
+
+This is the fastest way to deploy the skill using Alexa-hosted services:
+
+1. **Go to the Alexa Developer Console:**
+   - Visit [developer.amazon.com/alexa/console/ask](https://developer.amazon.com/alexa/console/ask)
+   - Sign in with your Amazon Developer account
+
+2. **Create a new skill:**
+   - Click "Create Skill"
+   - Enter skill name: "Personality Changer"
+   - Choose "Custom" model
+   - Choose "Alexa-hosted (Node.js)" for hosting
+   - Click "Import Skill"
+
+3. **Import from GitHub:**
+   - Enter the repository URL: `https://github.com/treyhall21/ideal-octo-succotash`
+   - Click "Import"
+   - Wait for the import to complete (this may take a few minutes)
+
+4. **Build and test:**
+   - The skill will be automatically configured with the correct interaction model and Lambda code
+   - Click "Build" to build the interaction model
+   - Go to the "Test" tab and enable testing
+   - Try saying: "Alexa, open personality changer"
+
+#### Option 2: Manual Deployment with ASK CLI
+
+For advanced users who want more control:
+
+1. **Install and configure ASK CLI:**
+   ```bash
+   npm install -g ask-cli
+   ask configure
+   ```
+
+2. **Clone the repository:**
    ```bash
    git clone https://github.com/treyhall21/ideal-octo-succotash.git
    cd ideal-octo-succotash
    ```
 
-2. **Install dependencies:**
-   ```bash
-   cd lambda
-   npm install
-   cd ..
-   ```
-
-3. **Configure ASK CLI:**
-   ```bash
-   ask configure
-   ```
-
-4. **Deploy the skill:**
+3. **Deploy the skill:**
    ```bash
    ask deploy
    ```
 
-5. **Test the skill:**
-   - Use the Alexa Developer Console
-   - Test on an Alexa-enabled device
-   - Use the Alexa Simulator
-
-### Local Testing
-
-To test the Lambda function locally, you can use the Alexa Skills Kit SDK Test framework or create test events.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for detailed deployment instructions.
 
 ## Development
 
@@ -158,7 +171,7 @@ newpersonality: {
 }
 ```
 
-Then update the interaction model in `skill-package/interactionModels/custom/en-US.json` to include the new personality type.
+Then update the interaction model in `models/en-US.json` to include the new personality type.
 
 ### Modifying Voice Characteristics
 
