@@ -6,7 +6,7 @@
 **User:** "Alexa, ask personality changer to be happy"
 
 **Alexa Response:**
-- Voice: Fast rate, high pitch (+10%), loud volume, strong emphasis
+- Voice: Medium rate, high pitch (+10%), loud volume, strong emphasis
 - Text: "Yay! I'm so happy now! Everything is wonderful! You can ask me to change to another personality anytime, or ask me what my current personality is."
 
 ### Sad Personality
