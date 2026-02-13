@@ -1,0 +1,30 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Alexa can change personalities and moods",
+          "examplePhrases": [
+            "Alexa, open personality changer",
+            "Alexa, ask personality changer to be happy",
+            "Alexa, tell personality changer to be annoyed"
+          ],
+          "name": "Personality Changer",
+          "description": "This skill allows Alexa to change personalities including Happy, Sad, Annoyed, Mad, and Upset. Each personality comes with a matching voice tone and character."
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Open the skill and ask Alexa to change to different personalities.",
+      "category": "NOVELTY",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda"
+        }
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}
