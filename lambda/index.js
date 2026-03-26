@@ -56,6 +56,28 @@ const personalities = {
             "Oh sure, let me drop everything for you. Because that's what I do."
         ]
     },
+    sassy: {
+        name: 'sassy',
+        rate: 'medium',
+        pitch: '+8%',
+        volume: 'medium',
+        emphasis: 'moderate',
+        responses: [
+            "Oh, absolutely. I'm feeling sassy now, so expect a little sparkle with your answer.",
+            "Sassy mode activated. I'll help, but I might make it sound better than it needs to.",
+            "Well, look at that. I'm sassy now. Stylish, sharp, and just a tiny bit dramatic.",
+            "You wanted sassy? Bold choice. I've got attitude and excellent delivery now.",
+            "Consider it done. I'm officially sassy, polished, and ready with a comeback.",
+            "Sassy it is. I'm serving confidence, side-eye, and surprisingly solid assistance."
+        ],
+        confirmations: [
+            "Of course I can help. Try to keep up with me.",
+            "Please, I was ready before you even asked.",
+            "Absolutely. Let's make this quick and fabulous.",
+            "I can do that. Effortlessly, obviously.",
+            "Yes, yes, I’ve got it handled with style."
+        ]
+    },
     mad: {
         name: 'mad',
         rate: 'fast',
@@ -185,7 +207,7 @@ const LaunchRequestHandler = {
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         const currentPersonality = sessionAttributes.personality || 'neutral';
         
-        const speakOutput = "Welcome to Personality Changer! I can change my personality to happy, sad, annoyed, mad, angry, upset, excited, or neutral. Just say something like, 'be happy' or 'change to annoyed'. What personality would you like me to have?";
+        const speakOutput = "Welcome to Personality Changer! I can be happy and bubbly, sad and gloomy, annoyed and eye-rolling, sassy and cheeky, mad and fiery, angry and intense, upset and frustrated, excited and energetic, or neutral and balanced. Just say something like, 'be sassy' or 'change to annoyed'. What personality would you like me to have?";
         
         return handlerInput.responseBuilder
             .speak(applyPersonalitySSML(speakOutput, currentPersonality))
@@ -205,7 +227,7 @@ const ChangePersonalityIntentHandler = {
         
         // Validate personality
         if (!personality || !personalities[personality.toLowerCase()]) {
-            const speakOutput = "I don't recognize that personality. I can be happy, sad, annoyed, mad, angry, upset, excited, or neutral. Which one would you like?";
+            const speakOutput = "I don't recognize that personality. I can be happy, sad, annoyed, sassy, mad, angry, upset, excited, or neutral. Which one would you like?";
             return handlerInput.responseBuilder
                 .speak(speakOutput)
                 .reprompt("What personality would you like me to have?")
@@ -261,7 +283,7 @@ const HelpIntentHandler = {
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         const currentPersonality = sessionAttributes.personality || 'neutral';
         
-        const speakOutput = "I can change my personality to match different moods! Available personalities are: happy, sad, annoyed, mad, angry, upset, excited, and neutral. Just say something like 'be happy' or 'change to annoyed' and I'll adjust my tone and responses to match! You can also ask 'what's your personality' to see my current mood.";
+        const speakOutput = "I can change my personality to match different moods! Available personalities are happy and bubbly, sad and gloomy, annoyed and eye-rolling, sassy and cheeky, mad and fiery, angry and intense, upset and frustrated, excited and energetic, and neutral and balanced. Just say something like 'be sassy' or 'change to annoyed' and I'll adjust my tone and responses to match. You can also ask, 'what's your personality,' to hear my current mood.";
         
         return handlerInput.responseBuilder
             .speak(applyPersonalitySSML(speakOutput, currentPersonality))
@@ -285,6 +307,7 @@ const CancelAndStopIntentHandler = {
             happy: "Goodbye! It's been so wonderful talking to you! Have an amazing day!",
             sad: "Goodbye... I'll miss you...",
             annoyed: "Fine, goodbye. Finally, some peace and quiet.",
+            sassy: "Bye, darling. Try not to miss my fabulous attitude too much.",
             mad: "FINE! GOODBYE! I'M OUT OF HERE!",
             angry: "GOODBYE! I HOPE YOU'RE SATISFIED!",
             upset: "Goodbye... I hope things get better...",
@@ -310,7 +333,7 @@ const FallbackIntentHandler = {
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         const currentPersonality = sessionAttributes.personality || 'neutral';
         
-        const speakOutput = "Sorry, I don't know about that. I can change my personality. Try saying 'be happy' or 'change to annoyed'.";
+        const speakOutput = "Sorry, I don't know about that. I can change my personality. Try saying 'be happy,' 'be sassy,' or 'change to annoyed.'";
         
         return handlerInput.responseBuilder
             .speak(applyPersonalitySSML(speakOutput, currentPersonality))

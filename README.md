@@ -8,6 +8,7 @@ This skill enables users to change Alexa's personality to different moods includ
 - **Happy** - Cheerful, enthusiastic, and upbeat
 - **Sad** - Gloomy, disappointed, and down
 - **Annoyed** - Sarcastic, obnoxious, and irritated
+- **Sassy** - Cheeky, witty, and confident
 - **Mad/Angry** - Furious, loud, and aggressive
 - **Upset** - Frustrated and troubled
 - **Excited** - Energetic, enthusiastic, and thrilled
@@ -20,7 +21,7 @@ Each personality includes:
 
 ## Features
 
-- **8 Different Personalities**: Each with unique voice characteristics and responses
+- **9 Different Personalities**: Each with unique voice characteristics and responses
 - **SSML Voice Modulation**: Automatic adjustment of pitch, rate, volume, and emphasis
 - **Context-Aware Responses**: Different responses for different interactions
 - **Session Persistence**: Personality persists throughout the session
@@ -48,6 +49,7 @@ Once deployed, users can interact with the skill using these voice commands:
 
 - "Alexa, open personality changer"
 - "Alexa, ask personality changer to be happy"
+- "Alexa, ask personality changer to be sassy"
 - "Alexa, tell personality changer to change to annoyed"
 - "Alexa, ask personality changer to be mad"
 - "Alexa, ask personality changer what's your personality"
@@ -64,6 +66,12 @@ Alexa: [cheerful tone] "Yay! I'm so happy now! Everything is wonderful!"
 ```
 User: "Alexa, tell personality changer to be annoyed"
 Alexa: [sarcastic tone] "Ugh, fine! I'm annoyed now. Are you happy?"
+```
+
+**Sassy Personality:**
+```
+User: "Alexa, ask personality changer to be sassy"
+Alexa: [playful, cheeky tone] "Sassy mode activated. I'll help, but I might make it sound better than it needs to."
 ```
 
 **Mad Personality:**

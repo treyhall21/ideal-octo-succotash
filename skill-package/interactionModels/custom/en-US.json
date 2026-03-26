@@ -72,6 +72,15 @@
             },
             {
               "name": {
+                "value": "sassy",
+                "synonyms": [
+                  "cheeky",
+                  "snarky"
+                ]
+              }
+            },
+            {
+              "name": {
                 "value": "mad"
               }
             },
