@@ -207,7 +207,7 @@ const LaunchRequestHandler = {
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         const currentPersonality = sessionAttributes.personality || 'neutral';
         
-        const speakOutput = "Welcome to Personality Changer! I can be happy and bubbly, sad and gloomy, annoyed and eye-rolling, sassy and cheeky, mad, angry, upset, excited, or neutral. Just say something like, 'be sassy' or 'change to annoyed'. What personality would you like me to have?";
+        const speakOutput = "Welcome to Personality Changer! I can be happy and bubbly, sad and gloomy, annoyed and eye-rolling, sassy and cheeky, mad and fiery, angry and intense, upset and frustrated, excited and energetic, or neutral and balanced. Just say something like, 'be sassy' or 'change to annoyed'. What personality would you like me to have?";
         
         return handlerInput.responseBuilder
             .speak(applyPersonalitySSML(speakOutput, currentPersonality))
@@ -283,7 +283,7 @@ const HelpIntentHandler = {
         const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
         const currentPersonality = sessionAttributes.personality || 'neutral';
         
-        const speakOutput = "I can change my personality to match different moods! Available personalities are happy and bubbly, sad and gloomy, annoyed and sarcastic, sassy and cheeky, mad, angry, upset, excited, and neutral. Just say something like 'be sassy' or 'change to annoyed' and I'll adjust my tone and responses to match. You can also ask, 'what's your personality,' to hear my current mood.";
+        const speakOutput = "I can change my personality to match different moods! Available personalities are happy and bubbly, sad and gloomy, annoyed and eye-rolling, sassy and cheeky, mad and fiery, angry and intense, upset and frustrated, excited and energetic, and neutral and balanced. Just say something like 'be sassy' or 'change to annoyed' and I'll adjust my tone and responses to match. You can also ask, 'what's your personality,' to hear my current mood.";
         
         return handlerInput.responseBuilder
             .speak(applyPersonalitySSML(speakOutput, currentPersonality))
