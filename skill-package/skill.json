@@ -7,10 +7,11 @@
           "examplePhrases": [
             "Alexa, open personality changer",
             "Alexa, ask personality changer to be happy",
+            "Alexa, ask personality changer to be sassy",
             "Alexa, tell personality changer to be annoyed"
           ],
           "name": "Personality Changer",
-          "description": "This skill allows Alexa to change personalities including Happy, Sad, Annoyed, Mad, Angry, Upset, Excited, and Neutral. Each personality comes with a matching voice tone and character."
+          "description": "This skill allows Alexa to change personalities including Happy, Sad, Annoyed, Sassy, Mad, Angry, Upset, Excited, and Neutral. Each personality comes with a matching voice tone, mood, and character."
         }
       },
       "isAvailableWorldwide": true,
